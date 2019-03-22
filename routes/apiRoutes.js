@@ -2,8 +2,14 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/examples", function(req, res) {
+  app.get("/api/gigs", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
+      res.json(dbExamples);
+    });
+  });
+
+  app.get("/api/gigs/:id", function(req, res) {
+    db.Example.findOne({where: { id: req.params.id }}).then(function(dbExamples) {
       res.json(dbExamples);
     });
   });
