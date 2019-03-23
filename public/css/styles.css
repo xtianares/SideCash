@@ -1,3 +1,51 @@
-.list-group-item {
-  line-height: 2.5;
+/* ----------------------------------------------------------------------------
+    Project Styles
+----------------------------------------------------------------------------- */
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  font-family: 'Open Sans', 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  color: #444;
+  background-color: #56A8E3;
+  background-image: linear-gradient(to right bottom, #6c6bd1, #6d77d7, #7083dc, #758fe0, #7b9ae3, #73a7ec, #6db3f3, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  overflow-y: scroll;
+}
+.container {
+  max-width: 1200px;
+}
+.container-fluid.but-fixed {
+  max-width: 1230px;
+}
+
+/* ----------------------------------------------------------------------------
+    Page Media Queries
+----------------------------------------------------------------------------- */
+@media (min-width: 576px) {
+  .container-fluid.but-fixed {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .card-deck .card {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: calc(100% - 30px);
+  }
+
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+
 }
