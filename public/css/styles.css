@@ -10,7 +10,7 @@ body {
   text-rendering: optimizeLegibility;
   color: #444;
   background-color: #56A8E3;
-  background-image: linear-gradient(to right bottom, #6c6bd1, #6d77d7, #7083dc, #758fe0, #7b9ae3, #73a7ec, #6db3f3, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  /* background-image: linear-gradient(to right bottom, #6c6bd1, #6d77d7, #7083dc, #758fe0, #7b9ae3, #73a7ec, #6db3f3, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
   background-size: cover;
   background-position: 50% 50%;
   background-attachment: fixed;
@@ -22,7 +22,18 @@ body {
 .container-fluid.but-fixed {
   max-width: 1230px;
 }
-
+#banner {
+	height: 95vh;
+	min-height: 500px;
+  /* max-height: 700px; */
+	padding-top: 30px;
+	padding-bottom: 120px;
+	position: relative;
+	z-index: 1;
+}
+#banner .cta a.btn{
+  min-width: 200px;
+}
 /* ----------------------------------------------------------------------------
     Page Media Queries
 ----------------------------------------------------------------------------- */
