@@ -32,7 +32,7 @@ module.exports = function(app) {
         })
         .then(function(userData) {
             // console.log(data);
-            if(data){
+            if(userData){
                 db.Gig.create({
                     title: req.body.title,
                     description: req.body.description,
@@ -76,27 +76,67 @@ module.exports = function(app) {
 
     // Create a new user
     app.post("/api/user/create", function (req, res) {
-        db.User.create({
-            username: req.body.username,
-            fullname: req.body.fullname,
-            password: req.body.password,
-            email: req.body.fullname,
-            phone: req.body.fullname,
-            location: req.body.location
+        db.User.findOne({
+            where: { username: req.body.username } // need to grab this from cookie or somewhere else...
         })
-        .then(function (userData) {
-            res.json(userData).end();
+        .then(function(userData) {
+            // console.log(data);
+            if(userData){
+                let err = {
+                    error: "Username already taken!"
+                };
+                res.json(err).end();
+            }
+            // if user does not exist create user
+            else {
+                db.User.create({
+                    username: req.body.username,
+                    fullname: req.body.fullname,
+                    password: req.body.password,
+                    email: req.body.email,
+                    phone: req.body.phone,
+                    location: req.body.location
+                })
+                .then(function (userData) {
+                    res.json(userData).end();
+                    // res.redirect("/user/" + userData.id);
+                })
+            }
         });
     });
 
-    // Create a new user
+    // user login
+    app.post("/api/user/login", function (req, res) {
+        db.User.findOne({
+            where: {
+                username: req.body.username,
+                password: req.body.password
+            }
+        })
+        .then(function(userData) {
+            // console.log(data);
+            if(userData){
+                res.json(userData).end();
+            }
+            // if user does not exist
+            else {
+                let err = {
+                    error: "Please check your username and passoword."
+                };
+                res.json(err).end();
+            }
+        });
+    });
+
+
+    // add new rating for user
     app.post("/api/rating/:userId", function (req, res) {
         db.User.findOne({
             where: { id: req.body.userId } // grab this from the login user's info giving the rating
         })
         .then(function(userData) {
             // console.log(data);
-            if(data){
+            if(userData){
                 db.rating.create({
                     rating: req.body.rating,
                     UserId: req.params.userId

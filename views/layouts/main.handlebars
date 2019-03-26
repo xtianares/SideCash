@@ -14,48 +14,46 @@
 </head>
 <body>
 
-<header id="header-wrapper" class="clearfix">
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">
-      <span class="brand-name d-inline-block align-middle">Side Ca$h</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-        <li class="nav-item"><a class="nav-link" href="/signup/">Signup</a></li>
-      </ul>
-    </div>
-  </nav>
-</header> <!-- end #header_wrapper -->
+<header class="clearfix" id="header-wrapper">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="/"><span class="brand-name d-inline-block align-middle">Side Ca$h</span></a> <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarCollapse" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item logged-out"><a class="nav-link" data-target="#login-modal" data-toggle="modal" href="#">Login</a></li>
+                <li class="nav-item logged-out"><a class="nav-link" href="/signup/">Signup</a></li>
+                <li class="nav-item logged-in"><a class="nav-link logout-link" href="/">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header><!-- end #header_wrapper -->
 
 {{{ body }}}
 
 <div aria-hidden="true" class="modal fade" id="login-modal" role="dialog" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Login</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input id="username" class="form-control" type="text" name="username">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form" action="/api/user/login" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input class="form-control" id="username" name="username" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" id="password" name="password" type="password">
+                    </div>
+                    <div class="form-group d-flex justify-content-end mb-0">
+                        <button class="btn btn-primary login-btn" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input id="password" class="form-control" type="password" name="password">
-        </div>
-        <div class="form-group d-flex justify-content-end mb-0">
-          <button class="btn btn-primary eat-btn" type="button">Login</button>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
 
 <!-- Optional JavaScript -->

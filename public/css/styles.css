@@ -31,8 +31,13 @@ body {
 	position: relative;
 	z-index: 1;
 }
-#banner .cta a.btn{
+#banner .cta a.btn {
   min-width: 200px;
+}
+
+/* hidding the logout button */
+.logged-in {
+    display: none;
 }
 /* ----------------------------------------------------------------------------
     Page Media Queries
