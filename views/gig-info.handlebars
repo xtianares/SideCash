@@ -1,16 +1,29 @@
 <main>
-  <div class="container-fluid but-fixed">
-    <div id="banner" class="row d-flex justify-content-left align-items-center">
-      <div class="col-12">
-        <div class="headline">
-          <h1 class="mb-3 text-white">Side Cash</h1>
-          <h4 class="mb-5 text-white font-weight-light">A place to get your side hussle game level up.</h4>
+  <br>
+    <div class="container">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="card" style="width: 100%; height: 100%;">
+                    <div class="card-header">
+                        <h3 class="card-title">{{gig.title}}</h3>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Description:</h6>
+                        <p class="card-text">{{gig.description}}</p>
+                        <h6 class="card-subtitle mb-2 text-muted">Location:</h6>
+                        <p class="card-text">{{gig.location}}</p>
+                        <h6 class="card-subtitle mb-2 text-muted">Date(s) Needed:</h6>
+                        <p class="card-text">{{gig.date_needed}}</p>
+                        <h6 class="card-subtitle mb-2 text-muted">Earnings:</h6>
+                        <p class="card-text">{{gig.amount_offered}}</p>
+                        <a href="#" class="card-link">Phone: {{user.phone}}</a>
+                        <a href="mailto:{{user.email}}" class="card-link">Email</a>
+                        <h5 class="card-subtitle mb-2 text-muted">By: {{user.username}}</h5>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="cta">
-          <a class="btn btn-primary btn-lg" href="/gigs/">I want to work</a>
-          <a class="btn btn-primary btn-lg" href="/post-gig/">I want to hire</a>
-        </div>
-      </div>
+        <div class="col-2"></div>
     </div>
-  </div>
 </main>
