@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Dkoichi94",
+    "password": "",
     "database": "sidecash_db",
     "host": "localhost",
     "dialect": "mysql"
