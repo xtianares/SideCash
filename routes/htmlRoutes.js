@@ -44,7 +44,7 @@ module.exports = function(app) {
     });
 
     // display user info
-    app.get("/user/:id", function(req, res) {
+    app.get("/user-profile/:id", function(req, res) {
         db.User.findOne({
             where: {
                 id: req.params.id
