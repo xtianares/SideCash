@@ -43,7 +43,8 @@ module.exports = function(app) {
                     UserId: userData.id
                 })
                 .then(function (gigData) {
-                    res.json(gigData).end();
+                    // res.json(gigData).end();
+                    res.redirect("/gig-info/" + gigData.id);
                 });
             }
             // if user does not exist
