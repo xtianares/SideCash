@@ -3,17 +3,22 @@
         <div class="row d-flex justify-content-center mt-4">
             <div class="col-md-10 col-lg-8">
                 <div class="card border-0">
-                    <div class="card-header">{{user.fullname}}</div>
+                    <h4 class="card-header">{{user.username}}</h4>
                     <div class="card-body">
-                        <form id="signup-form" action="#" method="POST">
-                            <h5 class="card-subtitle mb-2 text-muted">Username</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Location:</h6>
-                            <p class="card-text">Orlando, FL</p>
-                            <h6 class="card-subtitle mb-2 text-muted">Rating:</h6>
-                            <p class="card-text">4.5 out of 5 stars</p>
-                            <a href="#" class="card-link">Phone: 555-555-5555</a>
-                            <a href="mailto:gigs@sidecash.com" class="card-link">Email me</a>
-                        </form>
+                        <div class="row">
+                            <div class="col-4">
+                                <p class="mb-2 text-muted">Fullname:</p>
+                                <p class="card-text">{{user.fullname}}</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="mb-2 text-muted font-weight-light">Location:</p>
+                                <p class="card-text">{{user.location}}</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="mb-2"><span class="text-muted font-weight-light">Phone:</span> {{user.phone}}</p>
+                                <p class="mb-0"><span class="text-muted font-weight-light">Email:</span> <a href="mailto:{{gig.User.email}}" class="card-link">{{user.email}}</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

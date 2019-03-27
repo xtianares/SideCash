@@ -1,17 +1,18 @@
 <main>
-    <br>
-    <div class="container">
-        <div class="col-12">
-            <div class="row">
-                <div class="card" style="width: 100%;">
-                    <div class="card-header">
-                        <h5>{{gig.title}}</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{gig.description}}</p>
-                        <a href="/gig/{{gig.id}}" class="btn btn-primary">View Gig</a>
-                    </div>
-                </div>
+    <div class="container-fluid but-fixed">
+        <div class="row d-flex justify-content-center mt-4">
+            <div class="col-md-10 col-lg-8">
+                {{#if gigs}}
+                    {{#each gigs}}
+                        <div class="card border-0 mb-3">
+                            <h5 class="card-header">{{this.title}}</h5>
+                            <div class="card-body">
+                                <p>{{this.description}}</p>
+                                <a href="/gig-info/{{this.id}}" class="btn btn-outline-primary">View Gig</a>
+                            </div>
+                        </div>
+                    {{/each}}
+                {{/if}}
             </div>
         </div>
     </div>

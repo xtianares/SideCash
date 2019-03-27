@@ -90,3 +90,34 @@ $('#login-form').on('submit', function(e){
         }
     });
 });
+
+// post gig
+$('#post-gig-form').on('submit', function(e){
+    e.preventDefault();
+    let query = '/api/gig/create';
+    let newGig = {
+        title: $("#gig-title").val().trim(),
+        description: $("#gig-description").val().trim(),
+        date_needed: $("#gig-date").val().trim(),
+        amount_offered: $("#gig-amount").val().trim(),
+        location: $("#gig-location").val().trim(),
+        category: $("#gig-category").val().trim(),
+        username: readCookie("logged-username")
+    }
+    // console.log(newGig);
+    $.ajax({
+        method: "POST",
+        url: query,
+        data: newGig
+    })
+    .done(function(data) {
+        // Redirect to user profile
+        console.log(data);
+        if (data.error) {
+            // add user validation error here, modal box
+        }
+        else {
+            window.location = "/gig-info/" + data.id;
+        }
+    });
+});
