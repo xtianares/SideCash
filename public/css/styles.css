@@ -34,6 +34,10 @@ body {
 #banner .cta a.btn {
   min-width: 200px;
 }
+span.login-error, span.signup-error {
+    padding-top: 6px;
+    padding-right: 10px;
+}
 
 /* hidding the logout button */
 .logged-in {

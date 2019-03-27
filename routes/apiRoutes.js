@@ -122,7 +122,7 @@ module.exports = function(app) {
             // if user does not exist
             else {
                 let err = {
-                    error: "Please check your username and passoword."
+                    error: "Please check your username and password."
                 };
                 res.json(err).end();
             }

@@ -32,6 +32,7 @@ $(function(){
 
 $('#signup-form').on('submit', function(e){
     e.preventDefault();
+    $('#signup-form .signup-error').remove()
     let query = '/api/user/create';
     let newUser = {
         username: $("#username").val().trim(),
@@ -51,6 +52,7 @@ $('#signup-form').on('submit', function(e){
         console.log(data);
         if (data.error) {
             // add user validation error here, modal box
+            $('#signup-form .signup-btn').before("<span class='signup-error text-danger'>" + data.error + " </span>");
         }
         else {
             // setting dummy login cookies for demo only
@@ -66,8 +68,8 @@ $('#login-form').on('submit', function(e){
     $('#login-form .login-error').remove()
     let query = '/api/user/login';
     let userInfo = {
-        username: $("#username").val().trim(),
-        password: $("#password").val().trim()
+        username: $("#login-username").val().trim(),
+        password: $("#login-password").val().trim()
     }
     console.log(userInfo);
     $.ajax({
