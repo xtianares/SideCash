@@ -16,14 +16,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     date_needed: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
     amount_offered: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]

@@ -12,22 +12,27 @@ module.exports = function(app) {
     app.get("/gigs", function(req, res) {
         db.Gig.findAll({
             where: {},
-            include: [db.User]
+            order: [
+                ['id', 'DESC']
+            ],
+            include: [db.User],
         })
         .then(function(dbGigs) {
-            res.render("gigs", { gigs: dbGigs });
+            res.render("gig-listings", { gigs: dbGigs });
         });
     })
 
     // display single gig info
-    app.get("/gig/:id", function(req, res) {
+    app.get("/gig-info/:id", function(req, res) {
         db.Gig.findOne({
             where: {
                 id: req.params.id
-            }
+            },
+            include: [db.User]
         })
         .then(function(dbGig) {
             res.render("gig-info", { gig: dbGig});
+            // res.json(dbGig);
         });
     });
 

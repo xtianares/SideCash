@@ -28,7 +28,7 @@ module.exports = function(app) {
     app.post("/api/gig/create", function (req, res) {
         // if user exits, use ID
         db.User.findOne({
-            where: { id: req.body.userId } // need to grab this from cookie or somewhere else...
+            where: { username: req.body.username } // need to grab this from cookie or somewhere else...
         })
         .then(function(userData) {
             // console.log(data);
@@ -36,14 +36,15 @@ module.exports = function(app) {
                 db.Gig.create({
                     title: req.body.title,
                     description: req.body.description,
-                    date_needed: req.body.dateNeeded,
-                    amount_offered: req.body.amountOffered,
+                    date_needed: req.body.date_needed,
+                    amount_offered: req.body.amount_offered,
                     location: req.body.location,
                     category: req.body.category,
                     UserId: userData.id
                 })
                 .then(function (gigData) {
                     res.json(gigData).end();
+                    // res.redirect("/gig-info/" + gigData.id);
                 });
             }
             // if user does not exist
