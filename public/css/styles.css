@@ -43,6 +43,29 @@ span.login-error, span.signup-error {
 .logged-in {
     display: none;
 }
+
+/* navbar */
+.navbar {
+  color: #FFF;
+  background-color: #000 !important;
+}
+
+.navbar ul li a  {
+  color: #fff
+  /* background-color: #000; */
+}
+
+
+.navbar-brand>img {
+  height: 55%;
+  width: 250px;
+}
+
+/* text on home page */
+.mb-3 {
+/* color:red; */
+}
+
 /* ----------------------------------------------------------------------------
     Page Media Queries
 ----------------------------------------------------------------------------- */
