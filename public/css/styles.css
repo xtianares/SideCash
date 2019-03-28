@@ -8,7 +8,7 @@ html {
 body {
   font-family: 'Open Sans', 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
-  color: #000;
+  color: #444;
   background-color: #56A8E3;
   /* background-image: linear-gradient(to right bottom, #6c6bd1, #6d77d7, #7083dc, #758fe0, #7b9ae3, #73a7ec, #6db3f3, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
   background-size: cover;
@@ -47,7 +47,7 @@ span.login-error, span.signup-error {
 /* navbar */
 .navbar {
   color: #FFF;
-  background-color: #000;
+  background-color: #000 !important;
 }
 
 .navbar ul li a  {
@@ -61,9 +61,9 @@ span.login-error, span.signup-error {
   width: 250px;
 }
 
-/* text on home page */ 
+/* text on home page */
 .mb-3 {
-color:red;
+/* color:red; */
 }
 
 /* ----------------------------------------------------------------------------

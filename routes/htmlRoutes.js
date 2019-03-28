@@ -32,7 +32,17 @@ module.exports = function(app) {
         })
         .then(function(dbGig) {
             res.render("gig-info", { gig: dbGig});
-            // res.json(dbGig);
+            // db.Gig.findAll({
+            //     where: {
+            //         category: dbGig.category,
+            //         id: { $ne: dbGig.id }
+            //     },
+            //     include: [db.User]
+            // })
+            // .then(function(dbRelatedGigs) {
+            //     res.render("gig-info", { gig: dbGig, relatedgigs: dbRelatedGigs});
+            //     // res.json({ gig: dbGig, relatedgigs: dbRelatedGigs});
+            // });
         });
     });
 
