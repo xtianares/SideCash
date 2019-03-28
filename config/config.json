@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "Atown4real$8",
     "database": "sidecash_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "root",
+    "password": "Atown4real$8",
     "database": "sidecash_db",
     "host": "localhost",
     "dialect": "mysql",
