@@ -1,4 +1,5 @@
 var db = require("../models");
+var Op = db.Op; // needed for operators
 
 module.exports = function(app) {
     // Get all gigs

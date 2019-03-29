@@ -1,4 +1,5 @@
 var db = require("../models");
+var Op = db.Op; // needed for operators
 
 module.exports = function(app) {
     // Load index page
@@ -31,18 +32,18 @@ module.exports = function(app) {
             include: [db.User]
         })
         .then(function(dbGig) {
-            res.render("gig-info", { gig: dbGig});
-            // db.Gig.findAll({
-            //     where: {
-            //         category: dbGig.category,
-            //         id: { $ne: dbGig.id }
-            //     },
-            //     include: [db.User]
-            // })
-            // .then(function(dbRelatedGigs) {
-            //     res.render("gig-info", { gig: dbGig, relatedgigs: dbRelatedGigs});
-            //     // res.json({ gig: dbGig, relatedgigs: dbRelatedGigs});
-            // });
+            // res.render("gig-info", { gig: dbGig});
+            db.Gig.findAll({
+                where: {
+                    category: dbGig.category,
+                    id: { [Op.ne]: dbGig.id, }
+                },
+                include: [db.User]
+            })
+            .then(function(dbRelatedGigs) {
+                res.render("gig-info", { gig: dbGig, relatedgigs: dbRelatedGigs});
+                // res.json({ gig: dbGig, relatedgigs: dbRelatedGigs});
+            });
         });
     });
 
