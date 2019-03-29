@@ -25,7 +25,9 @@ body {
 #banner {
 	height: 95vh;
 	min-height: 500px;
-  /* max-height: 700px; */
+    /* max-height: 700px; */
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
 	padding-top: 30px;
 	padding-bottom: 120px;
 	position: relative;
@@ -43,28 +45,15 @@ span.login-error, span.signup-error {
 .logged-in {
     display: none;
 }
-
 /* navbar */
 .navbar {
   color: #FFF;
   background-color: #000 !important;
 }
-
-.navbar ul li a  {
-  color: #fff
-  /* background-color: #000; */
+.navbar-brand img {
+  max-width: 250px;
 }
 
-
-.navbar-brand>img {
-  height: 55%;
-  width: 250px;
-}
-
-/* text on home page */
-.mb-3 {
-/* color:red; */
-}
 
 /* ----------------------------------------------------------------------------
     Page Media Queries
@@ -87,6 +76,9 @@ span.login-error, span.signup-error {
 
 }
 @media (min-width: 992px) {
+    #banner {
+        background-image: url("../assets/money.png");
+    }
 
 }
 @media (min-width: 1200px) {
