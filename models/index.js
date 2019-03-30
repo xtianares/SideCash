@@ -37,6 +37,6 @@ Object.keys(db).forEach(function(modelName) {
 });
 
 db.sequelize = sequelize;
-db.Op = Sequelize.Op;
+db.Op = Sequelize.Op;  // needed for operators
 
 module.exports = db;

@@ -1,5 +1,5 @@
 var db = require("../models");
-var Op = db.Op; // needed for operators
+// var Op = db.Op; // needed for operators
 
 module.exports = function(app) {
     // Load index page
@@ -36,7 +36,7 @@ module.exports = function(app) {
             db.Gig.findAll({
                 where: {
                     category: dbGig.category,
-                    id: { [Op.ne]: dbGig.id, }
+                    id: { [db.Op.ne]: dbGig.id, }
                 },
                 include: [db.User]
             })
